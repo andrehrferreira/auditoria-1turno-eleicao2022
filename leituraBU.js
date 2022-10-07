@@ -31,7 +31,7 @@ function getBU(filename){
         try{
             const serialUrna = dataJson.conteudo.entidadeBoletimUrna.urna.correspondenciaResultado.carga.numeroSerieFC.value;
 
-            if(serialUrna?.length == 8){
+            if(serialUrna?.length == 8 || serialUrna?.length == 7){
                 resolve({
                     secao: dataJson.identificacao.secao.value,
                     zona: dataJson.conteudo.entidadeBoletimUrna.urna.correspondenciaResultado.identificacao.municipioZona.zona.value,

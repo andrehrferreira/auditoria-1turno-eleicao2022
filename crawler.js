@@ -31,23 +31,26 @@ class CrawlerBUs{
         this.page.setViewport({width: 1920, height: 1024});
         this.page.setRequestInterception(false);
         this.page.on('console', async message => {
-            const args = await Promise.all(message.args().map(arg => describe(arg)));
+            try{
+                const args = await Promise.all(message.args().map(arg => describe(arg)));
     
-            if(args[0]?.name == "entidadeBoletimUrna"){
-                const zona = args[0].identificacao.municipioZona.zona?.value;
-                const municipio = args[0].identificacao.municipioZona.municipio?.value;
-                const secao = args[0].identificacao.secao?.value;
+                if(args[0]?.name == "entidadeBoletimUrna"){
+                    const zona = args[0].identificacao.municipioZona.zona?.value;
+                    const municipio = args[0].identificacao.municipioZona.municipio?.value;
+                    const secao = args[0].identificacao.secao?.value;
 
-                if(!fs.existsSync(`./BUs/${municipio}`))
-                    fs.mkdirSync(`./BUs/${municipio}`);
+                    if(!fs.existsSync(`./BUs/${municipio}`))
+                        fs.mkdirSync(`./BUs/${municipio}`);
 
-                if(!fs.existsSync(`./Screenshots/${municipio}`))
-                    fs.mkdirSync(`./Screenshots/${municipio}`);
+                    if(!fs.existsSync(`./Screenshots/${municipio}`))
+                        fs.mkdirSync(`./Screenshots/${municipio}`);
 
-                fs.writeFileSync(`./BUs/${municipio}/BU-${municipio}-${zona}-${secao}.json`, JSON.stringify(args[0]));
-                await this.page.screenshot({path: `./Screenshots/${municipio}/BU-${municipio}-${zona}-${secao}.png`,  fullPage: true});
-                this.browser.close();
+                    fs.writeFileSync(`./BUs/${municipio}/BU-${municipio}-${zona}-${secao}.json`, JSON.stringify(args[0]));
+                    await this.page.screenshot({path: `./Screenshots/${municipio}/BU-${municipio}-${zona}-${secao}.png`,  fullPage: true});
+                    this.browser.close();
+                }
             }
+            catch(e){}
         })
         //.on('pageerror', ({ message }) => console.log(message))
         .on('response', async response => {
