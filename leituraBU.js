@@ -29,24 +29,54 @@ function getBU(filename){
         }
 
         try{
-            resolve({
-                secao: dataJson.identificacao.secao.value,
-                zona: dataJson.conteudo.entidadeBoletimUrna.urna.correspondenciaResultado.identificacao.municipioZona.zona.value,
-                municipio: dataJson.conteudo.entidadeBoletimUrna.urna.correspondenciaResultado.identificacao.municipioZona.municipio.value,
-                local: dataJson.conteudo.entidadeBoletimUrna.identificacao.local.value,
-                numeroInternoUrna: dataJson.conteudo.entidadeBoletimUrna.urna.correspondenciaResultado.carga.numeroInternoUrna.value,
-                numeroSerieFC: dataJson.conteudo.entidadeBoletimUrna.urna.correspondenciaResultado.carga.numeroSerieFC.value,
-                dataHoraCarga: dataJson.conteudo.entidadeBoletimUrna.urna.correspondenciaResultado.carga.dataHoraCarga.value,
-                codigoCarga: dataJson.conteudo.entidadeBoletimUrna.urna.correspondenciaResultado.carga.codigoCarga.value,
-                dataHoraAbertura: dataJson.conteudo.entidadeBoletimUrna.dadosSecao.dataHoraAbertura.value,
-                dataHoraEncerramento: dataJson.conteudo.entidadeBoletimUrna.dadosSecao.dataHoraEncerramento.value,
-                idEleicao: dataJson.conteudo.entidadeBoletimUrna.resultadosVotacaoPorEleicao.content[1].idEleicao.value,
-                qtdEleitoresAptos: dataJson.conteudo.entidadeBoletimUrna.resultadosVotacaoPorEleicao.content[0].qtdEleitoresAptos.value,
-                qtdEleitoresAptosPresidente: dataJson.conteudo.entidadeBoletimUrna.resultadosVotacaoPorEleicao.content[1].qtdEleitoresAptos.value,
-                qtdComparecimento: dataJson.conteudo.entidadeBoletimUrna.resultadosVotacaoPorEleicao.content[0].resultadosVotacao.content[0].qtdComparecimento.value,
-                qtdComparecimentoPresidente: dataJson.conteudo.entidadeBoletimUrna.resultadosVotacaoPorEleicao.content[1].resultadosVotacao.content[0].qtdComparecimento.value,
-                votos
-            });
+            const serialUrna = dataJson.conteudo.entidadeBoletimUrna.urna.correspondenciaResultado.carga.numeroSerieFC.value;
+
+            if(serialUrna.length == 8){
+                resolve({
+                    secao: dataJson.identificacao.secao.value,
+                    zona: dataJson.conteudo.entidadeBoletimUrna.urna.correspondenciaResultado.identificacao.municipioZona.zona.value,
+                    municipio: dataJson.conteudo.entidadeBoletimUrna.urna.correspondenciaResultado.identificacao.municipioZona.municipio.value,
+                    local: dataJson.conteudo.entidadeBoletimUrna.identificacao.local.value,
+                    numeroInternoUrna: dataJson.conteudo.entidadeBoletimUrna.urna.correspondenciaResultado.carga.numeroInternoUrna.value,
+                    numeroSerieFC: serialUrna,
+                    dataHoraCarga: dataJson.conteudo.entidadeBoletimUrna.urna.correspondenciaResultado.carga.dataHoraCarga.value,
+                    codigoCarga: dataJson.conteudo.entidadeBoletimUrna.urna.correspondenciaResultado.carga.codigoCarga.value,
+                    dataHoraAbertura: dataJson.conteudo.entidadeBoletimUrna.dadosSecao.dataHoraAbertura.value,
+                    dataHoraEncerramento: dataJson.conteudo.entidadeBoletimUrna.dadosSecao.dataHoraEncerramento.value,
+                    idEleicao: dataJson.conteudo.entidadeBoletimUrna.resultadosVotacaoPorEleicao.content[1].idEleicao.value,
+                    qtdEleitoresAptos: dataJson.conteudo.entidadeBoletimUrna.resultadosVotacaoPorEleicao.content[0].qtdEleitoresAptos.value,
+                    qtdEleitoresAptosPresidente: dataJson.conteudo.entidadeBoletimUrna.resultadosVotacaoPorEleicao.content[1].qtdEleitoresAptos.value,
+                    qtdComparecimento: dataJson.conteudo.entidadeBoletimUrna.resultadosVotacaoPorEleicao.content[0].resultadosVotacao.content[0].qtdComparecimento.value,
+                    qtdComparecimentoPresidente: dataJson.conteudo.entidadeBoletimUrna.resultadosVotacaoPorEleicao.content[1].resultadosVotacao.content[0].qtdComparecimento.value,
+                    votos
+                });
+            }
+            else{
+                const municipio = dataJson.conteudo.entidadeBoletimUrna.urna.correspondenciaResultado.identificacao.municipioZona.municipio.value;
+                const zona = dataJson.conteudo.entidadeBoletimUrna.urna.correspondenciaResultado.identificacao.municipioZona.zona.value;
+                const secao = dataJson.identificacao.secao.value;
+
+                fs.writeFileSync(`./UrnasSemSerial/${municipio}-${zona}-${secao}.json`, JSON.stringify({
+                    secao: dataJson.identificacao.secao.value,
+                    zona: dataJson.conteudo.entidadeBoletimUrna.urna.correspondenciaResultado.identificacao.municipioZona.zona.value,
+                    municipio: dataJson.conteudo.entidadeBoletimUrna.urna.correspondenciaResultado.identificacao.municipioZona.municipio.value,
+                    local: dataJson.conteudo.entidadeBoletimUrna.identificacao.local.value,
+                    numeroInternoUrna: dataJson.conteudo.entidadeBoletimUrna.urna.correspondenciaResultado.carga.numeroInternoUrna.value,
+                    numeroSerieFC: serialUrna,
+                    dataHoraCarga: dataJson.conteudo.entidadeBoletimUrna.urna.correspondenciaResultado.carga.dataHoraCarga.value,
+                    codigoCarga: dataJson.conteudo.entidadeBoletimUrna.urna.correspondenciaResultado.carga.codigoCarga.value,
+                    dataHoraAbertura: dataJson.conteudo.entidadeBoletimUrna.dadosSecao.dataHoraAbertura.value,
+                    dataHoraEncerramento: dataJson.conteudo.entidadeBoletimUrna.dadosSecao.dataHoraEncerramento.value,
+                    idEleicao: dataJson.conteudo.entidadeBoletimUrna.resultadosVotacaoPorEleicao.content[1].idEleicao.value,
+                    qtdEleitoresAptos: dataJson.conteudo.entidadeBoletimUrna.resultadosVotacaoPorEleicao.content[0].qtdEleitoresAptos.value,
+                    qtdEleitoresAptosPresidente: dataJson.conteudo.entidadeBoletimUrna.resultadosVotacaoPorEleicao.content[1].qtdEleitoresAptos.value,
+                    qtdComparecimento: dataJson.conteudo.entidadeBoletimUrna.resultadosVotacaoPorEleicao.content[0].resultadosVotacao.content[0].qtdComparecimento.value,
+                    qtdComparecimentoPresidente: dataJson.conteudo.entidadeBoletimUrna.resultadosVotacaoPorEleicao.content[1].resultadosVotacao.content[0].qtdComparecimento.value,
+                    votos
+                }, null, 4));
+
+                resolve();
+            }
         }
         catch(e){
             console.log("Erro ao ler arquivo: " + filename);
@@ -63,15 +93,18 @@ function getBU(filename){
 
     for(let bu of files){
         bar1.increment();  
-        const data = await getBU(bu);
 
-        if(data){
-            const dirname = path.dirname(bu.replace("BUs", "DataParsed"));
+        if(!fs.existsSync(bu.replace("BUs", "DataParsed"))){
+            const data = await getBU(bu);
 
-            if(!fs.existsSync(dirname))
-                fs.mkdirSync(dirname, { recursive: true });
+            if(data){
+                const dirname = path.dirname(bu.replace("BUs", "DataParsed"));
 
-            fs.writeFileSync(bu.replace("BUs", "DataParsed"), JSON.stringify(data, null, 4));
+                if(!fs.existsSync(dirname))
+                    fs.mkdirSync(dirname, { recursive: true });
+
+                fs.writeFileSync(bu.replace("BUs", "DataParsed"), JSON.stringify(data, null, 4));
+            }
         }
     }
 

@@ -42,4 +42,18 @@ import fg from "fast-glob";
 
         await fs.renameSync(file, `./Screenshots/${mun}/BU-${mun}-${zona}-${secao}.png`);
     }
+
+    //Binarios
+    const byFiles = await fg("./Binary/*.bu");
+
+    for(let file of byFiles){
+        const basename = path.basename(file);
+        const id = basename.replace(".bu", "").split("-")[1]; 
+        const dir = id.substring(id.length-2, id.length);
+
+        if(!fs.existsSync(`./Binary/${dir}`))
+            await fs.mkdirSync(`./Binary/${dir}`);
+
+        await fs.renameSync(file, `./Binary/${dir}/${basename}`);
+    }
 })();

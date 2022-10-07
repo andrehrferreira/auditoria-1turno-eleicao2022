@@ -2,6 +2,7 @@ import * as puppeteer from 'puppeteer';
 import * as path from "path";
 import * as fs from "fs";
 import * as cliProgress from "cli-progress";
+import * as url from "url";
 
 process.on('uncaughtException', function(err) {
     console.log(err)
@@ -33,9 +34,9 @@ class CrawlerBUs{
             const args = await Promise.all(message.args().map(arg => describe(arg)));
     
             if(args[0]?.name == "entidadeBoletimUrna"){
-                const zona = args[0].identificacao.municipioZona.zona.value;
-                const municipio = args[0].identificacao.municipioZona.municipio.value;
-                const secao = args[0].identificacao.secao.value;
+                const zona = args[0].identificacao.municipioZona.zona?.value;
+                const municipio = args[0].identificacao.municipioZona.municipio?.value;
+                const secao = args[0].identificacao.secao?.value;
 
                 if(!fs.existsSync(`./BUs/${municipio}`))
                     fs.mkdirSync(`./BUs/${municipio}`);
@@ -75,35 +76,63 @@ class CrawlerBUs{
     let crawlerIndex = (fs.existsSync("crawlerIndex.txt")) ? fs.readFileSync("crawlerIndex.txt", "utf-8") : 0;
     const urlList = JSON.parse(fs.readFileSync('./linksBUs.json'));
 
-    try{ crawlerIndex = parseInt(crawlerIndex); }
-    catch(e){}
+    //try{ crawlerIndex = parseInt(crawlerIndex); }
+    //catch(e){}
 
     const bar1 = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic);
-    bar1.start(urlList.length, crawlerIndex);
+    bar1.start(urlList.length, 0);
     let promises = [];
     
-    for(let keyUrl = crawlerIndex; keyUrl < urlList.length; keyUrl+=8){
+    for(let keyUrl = 0; keyUrl < urlList.length; keyUrl+=8){
         try{
-            if(keyUrl > crawlerIndex){
-                await fs.writeFileSync('crawlerIndex.txt', keyUrl.toString());
-
+            //if(keyUrl > crawlerIndex){
+                //await fs.writeFileSync('crawlerIndex.txt', keyUrl.toString());
+                
                 for(let key = 0; key < 8; key++){
-                    promises.push(new Promise(async (resolve) => {
-                        bar1.increment();                        
-                        const urlData = urlList[keyUrl + key];
-                        const crawler = new CrawlerBUs();
-                        await crawler.createBrowser();
-                        await crawler.getPageData(urlData.url);
-                        resolve();
-                    }));
+                    bar1.increment();  
+                    const link = decodeURIComponent(urlList[keyUrl + key].url);
+                    const municipio = parseInt(getDataByRegex(/mubu=(.*?);/gm, link)[1]);
+                    const zona = parseInt(getDataByRegex(/zn=(.*?);/gm, link)[1]);
+                    const secao = parseInt(getDataByRegex(/se=(.*?)\//gm, link)[1]);
+                    
+                    if(!fs.existsSync(`./BUs/${municipio}/BU-${municipio}-${zona}-${secao}.json`)){
+                        //console.log(`./BUs/${municipio}/BU-${municipio}-${zona}-${secao}.json`)
+
+                        promises.push(new Promise(async (resolve) => {                                                  
+                            const urlData = urlList[keyUrl + key];
+                            const crawler = new CrawlerBUs();
+                            await crawler.createBrowser();
+                            await crawler.getPageData(urlData.url);
+                            resolve();
+                        }));
+                    }
                 }
 
-                await Promise.all(promises);
+                if(promises.length > 0)
+                    await Promise.all(promises);
+
                 promises = [];
-            }
+            //}
         }
         catch(e){ 
             console.log(e); 
         }
     }
 })();
+
+
+function getDataByRegex(regex, str){
+    let m;
+    let result = [];
+
+    while ((m = regex.exec(str)) !== null) {
+        if (m.index === regex.lastIndex) 
+            regex.lastIndex++;
+            
+        m.forEach((match, groupIndex) => {
+            result[groupIndex] = match;
+        });
+    }
+
+    return result
+}

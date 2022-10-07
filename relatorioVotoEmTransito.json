@@ -1,58 +1,63 @@
 {
-    "secao": "98",
-    "zona": "5",
+    "secao": "437",
+    "zona": "9",
     "municipio": {
         "estadoSingla": "DF",
         "estado": "DISTRITO FEDERAL",
         "municipio": "BRASÍLIA",
         "codMun": "97012",
-        "zona": "0005",
-        "sessao": "0098"
+        "zona": "0009",
+        "sessao": "0437"
     },
-    "local": "1139",
-    "numeroInternoUrna": "1842696",
-    "numeroSerieFC": "59D7C9ED",
-    "dataHoraCarga": "20220922T120500",
-    "codigoCarga": "029357532448633935541881",
+    "local": "1384",
+    "numeroInternoUrna": "2228922",
+    "numeroSerieFC": "14D67FE8",
+    "dataHoraCarga": "20220926T092900",
+    "codigoCarga": "281927625726418990868571",
     "dataHoraAbertura": "20221002T080001",
-    "dataHoraEncerramento": "20221002T172110",
+    "dataHoraEncerramento": "20221002T170149",
     "idEleicao": "544",
-    "qtdEleitoresAptos": "345",
-    "qtdEleitoresAptosPresidente": "372",
-    "qtdComparecimento": "291",
-    "qtdComparecimentoPresidente": "316",
+    "qtdEleitoresAptos": "381",
+    "qtdEleitoresAptosPresidente": "392",
+    "qtdComparecimento": "352",
+    "qtdComparecimentoPresidente": "360",
     "votos": {
         "12": {
             "partido": "12",
-            "quantidadeVotos": "11",
-            "assinatura": "652515E6FD5CF8D9436F81D176F2570D2E8701BC985B80F9B96C8780208D63B3B611A9B7764A41C48DA35C4BC09A033F68273470796A5F5DEFB01181D7180A04"
+            "quantidadeVotos": "35",
+            "assinatura": "0AE8BC38A39A0539C54279A3EBA09165AEBED7D3797A87CDAB63DB004FA2AD0C8C2BEC54FD8F40C61627CE1B95ABB659798544081825A08428EF6D3E5D60E904"
         },
         "13": {
             "partido": "13",
-            "quantidadeVotos": "130",
-            "assinatura": "F283AB916CEF15CDA7C3B4A966E9A8E317D6232E16995A60BE851C437E4DD5DE8390857D964F87A68946C259CEE13847B73FC6FCE3FC9695A580AA13BEDA8E01"
+            "quantidadeVotos": "176",
+            "assinatura": "4EDEF205DD87D0A7175BEAFCBE3BE4DE188363810AFF2185697E2FCCD17F63A73E88B6796F774465D9A7838373A1BCBD60F520A26A697C8324CC432633A5B303"
         },
         "15": {
             "partido": "15",
-            "quantidadeVotos": "21",
-            "assinatura": "B4B953B311F1E6D597ECF814A04919BAE825632A38DDE7DEE184A782FB9BB5203ACA1256005075A4CA53EA59F4A97C1D6FC30DBD07773F1330B5E1957FF56E0D"
+            "quantidadeVotos": "22",
+            "assinatura": "94BDB493A695B9C5BE9E9D1D61FEBD08FED8C1926C1CE193DC50CF62C08E01E434241F80ABA6AA54E80E49E311628C17C68F46ECCC82C27A3FA097729343E00A"
         },
         "22": {
             "partido": "22",
-            "quantidadeVotos": "141",
-            "assinatura": "FDE63EE2D4E19C5C12E7543153F4EF240683779627904B3D06B69B4E56B9EBAABFC8A5DFE26AB1A26B330B31CBB5BD0AE9895E4FA7316901F4F64932C90F7302"
+            "quantidadeVotos": "117",
+            "assinatura": "F83344D5BF4035DDC9F0596D8FC38AFDCE2B8401589AEAC00CCB186627AA1D755FD78C3F3C1466DB506361D2D2D73C9EE1C9B5E4CC9C64FE68EF0DF5D9348102"
         },
         "30": {
             "partido": "30",
             "quantidadeVotos": "2",
-            "assinatura": "081723CC6D53C3EDD4E17C98F9C9F09FCFEDF98105E03D903EEF56826C5605BDB17EAD61C40D7595ABCA7B58C515E2FE87300025A7CCA0E1819C01A2A60BAC00"
+            "assinatura": "01CF593F253F45482A80BA1C4C3371705D37015B99DCFEEABFD8451EA5DB62E822577C19060BEA609A887322C4CB79316638E03948B8E521FA098FB8AD0D300A"
+        },
+        "44": {
+            "partido": "44",
+            "quantidadeVotos": "1",
+            "assinatura": "CA6FE5BAE24BF9EB2192650E9902704A152FB009F98AA2B629B95E7A11D3CD8F27E17DBA336B8B954A329E20EE0BC3D1A6C449BA3636F1323E53E7709BE02D0F"
         },
         "nulo": {
-            "quantidadeVotos": "7",
-            "assinatura": "29DAD1538FC4E7E4D808053DFE865B26F998C7E3EA9010432808DAC96CE77F08DB491ADD46E4CB7706EC809544DF940ED7D44DB88A925A42C31B820D1C631405"
+            "quantidadeVotos": "4",
+            "assinatura": "7C388947AC66A7B6C7A5B72A8DEE4F8E42D3195E11B13E422E2A43AD314B50662B048020786A8B1143BF061DC8E6428E582062B06B2DAC7F80D2EB553712870B"
         }
     },
-    "vencedor": "BOLSONARO",
-    "diffVencedor": 11,
+    "vencedor": "LULA",
+    "diffVencedor": 59,
     "diffTransito": true
 }
