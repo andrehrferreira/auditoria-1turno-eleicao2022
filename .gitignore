@@ -1,0 +1,9 @@
+/node_modules
+linksBUs.json
+package-lock.json
+/Screenshots/*
+/.Screenshots/*
+/BUs/*
+/Binary/*
+/DataParsed/*
+relatorio.json

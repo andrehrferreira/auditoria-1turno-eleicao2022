@@ -1,0 +1,12 @@
+{
+  "type": "module",
+  "dependencies": {
+    "archiver": "^5.3.1",
+    "cli-progress": "^3.11.2",
+    "fast-glob": "^3.2.12",
+    "filereader": "^0.10.3",
+    "node-fetch": "^3.2.10",
+    "node-zip": "^1.1.1",
+    "puppeteer": "^18.2.0"
+  }
+}

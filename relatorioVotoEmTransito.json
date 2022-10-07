@@ -1,0 +1,58 @@
+{
+    "secao": "98",
+    "zona": "5",
+    "municipio": {
+        "estadoSingla": "DF",
+        "estado": "DISTRITO FEDERAL",
+        "municipio": "BRASÍLIA",
+        "codMun": "97012",
+        "zona": "0005",
+        "sessao": "0098"
+    },
+    "local": "1139",
+    "numeroInternoUrna": "1842696",
+    "numeroSerieFC": "59D7C9ED",
+    "dataHoraCarga": "20220922T120500",
+    "codigoCarga": "029357532448633935541881",
+    "dataHoraAbertura": "20221002T080001",
+    "dataHoraEncerramento": "20221002T172110",
+    "idEleicao": "544",
+    "qtdEleitoresAptos": "345",
+    "qtdEleitoresAptosPresidente": "372",
+    "qtdComparecimento": "291",
+    "qtdComparecimentoPresidente": "316",
+    "votos": {
+        "12": {
+            "partido": "12",
+            "quantidadeVotos": "11",
+            "assinatura": "652515E6FD5CF8D9436F81D176F2570D2E8701BC985B80F9B96C8780208D63B3B611A9B7764A41C48DA35C4BC09A033F68273470796A5F5DEFB01181D7180A04"
+        },
+        "13": {
+            "partido": "13",
+            "quantidadeVotos": "130",
+            "assinatura": "F283AB916CEF15CDA7C3B4A966E9A8E317D6232E16995A60BE851C437E4DD5DE8390857D964F87A68946C259CEE13847B73FC6FCE3FC9695A580AA13BEDA8E01"
+        },
+        "15": {
+            "partido": "15",
+            "quantidadeVotos": "21",
+            "assinatura": "B4B953B311F1E6D597ECF814A04919BAE825632A38DDE7DEE184A782FB9BB5203ACA1256005075A4CA53EA59F4A97C1D6FC30DBD07773F1330B5E1957FF56E0D"
+        },
+        "22": {
+            "partido": "22",
+            "quantidadeVotos": "141",
+            "assinatura": "FDE63EE2D4E19C5C12E7543153F4EF240683779627904B3D06B69B4E56B9EBAABFC8A5DFE26AB1A26B330B31CBB5BD0AE9895E4FA7316901F4F64932C90F7302"
+        },
+        "30": {
+            "partido": "30",
+            "quantidadeVotos": "2",
+            "assinatura": "081723CC6D53C3EDD4E17C98F9C9F09FCFEDF98105E03D903EEF56826C5605BDB17EAD61C40D7595ABCA7B58C515E2FE87300025A7CCA0E1819C01A2A60BAC00"
+        },
+        "nulo": {
+            "quantidadeVotos": "7",
+            "assinatura": "29DAD1538FC4E7E4D808053DFE865B26F998C7E3EA9010432808DAC96CE77F08DB491ADD46E4CB7706EC809544DF940ED7D44DB88A925A42C31B820D1C631405"
+        }
+    },
+    "vencedor": "BOLSONARO",
+    "diffVencedor": 11,
+    "diffTransito": true
+}
