@@ -1,63 +1,68 @@
 {
-    "secao": "437",
-    "zona": "9",
+    "secao": "18",
+    "zona": "61",
     "municipio": {
-        "estadoSingla": "DF",
-        "estado": "DISTRITO FEDERAL",
-        "municipio": "BRASÍLIA",
-        "codMun": "97012",
-        "zona": "0009",
-        "sessao": "0437"
+        "estadoSingla": "MT",
+        "estado": "MATO GROSSO",
+        "municipio": "COMODORO",
+        "codMun": "99015",
+        "zona": "0061",
+        "sessao": "0018"
     },
-    "local": "1384",
-    "numeroInternoUrna": "2228922",
-    "numeroSerieFC": "14D67FE8",
-    "dataHoraCarga": "20220926T092900",
-    "codigoCarga": "281927625726418990868571",
-    "dataHoraAbertura": "20221002T080001",
-    "dataHoraEncerramento": "20221002T170149",
+    "local": "1040",
+    "numeroInternoUrna": "1763444",
+    "numeroSerieFC": "0841B7D9",
+    "dataHoraCarga": "20220920T100400",
+    "codigoCarga": "811734764064954580766188",
+    "dataHoraAbertura": "20221002T070344",
+    "dataHoraEncerramento": "20221002T160547",
     "idEleicao": "544",
-    "qtdEleitoresAptos": "381",
-    "qtdEleitoresAptosPresidente": "392",
-    "qtdComparecimento": "352",
-    "qtdComparecimentoPresidente": "360",
+    "qtdEleitoresAptos": "323",
+    "qtdEleitoresAptosPresidente": "325",
+    "qtdComparecimento": "218",
+    "qtdComparecimentoPresidente": "220",
     "votos": {
         "12": {
             "partido": "12",
-            "quantidadeVotos": "35",
-            "assinatura": "0AE8BC38A39A0539C54279A3EBA09165AEBED7D3797A87CDAB63DB004FA2AD0C8C2BEC54FD8F40C61627CE1B95ABB659798544081825A08428EF6D3E5D60E904"
+            "quantidadeVotos": "2",
+            "assinatura": "2FBC3969C32A07D30EBC278F55FFB23F2813E012D2EE60CD1E1DDA84F8B916B67C667073314C65E6191B0048B9B8482C447C05628F8FD8544526582B30908E0A"
         },
         "13": {
             "partido": "13",
-            "quantidadeVotos": "176",
-            "assinatura": "4EDEF205DD87D0A7175BEAFCBE3BE4DE188363810AFF2185697E2FCCD17F63A73E88B6796F774465D9A7838373A1BCBD60F520A26A697C8324CC432633A5B303"
+            "quantidadeVotos": "51",
+            "assinatura": "048F1937B2117B0505DB8C7CB2649CCD623059046D824ADC7F6BC29C6B5BC0CBB2DC6E12B9BFCDA11C44018438070A21B7E1F07FE955F6DA84387696667D010C"
         },
         "15": {
             "partido": "15",
-            "quantidadeVotos": "22",
-            "assinatura": "94BDB493A695B9C5BE9E9D1D61FEBD08FED8C1926C1CE193DC50CF62C08E01E434241F80ABA6AA54E80E49E311628C17C68F46ECCC82C27A3FA097729343E00A"
+            "quantidadeVotos": "1",
+            "assinatura": "AA738396ECEA134CE53FC0880B0D939FFD83C0E1D09C15524B2FC2FADC1B3B79FA8C4CADC824ECF9947D8A9EE53D34FB1ABA10B1236B0ED9861E2F825E846604"
         },
         "22": {
             "partido": "22",
-            "quantidadeVotos": "117",
-            "assinatura": "F83344D5BF4035DDC9F0596D8FC38AFDCE2B8401589AEAC00CCB186627AA1D755FD78C3F3C1466DB506361D2D2D73C9EE1C9B5E4CC9C64FE68EF0DF5D9348102"
+            "quantidadeVotos": "158",
+            "assinatura": "131A527A9D1D05C83D588A745C54BA2C13D276E0F63DE472563F9C71798AD41B357F02ABAB8246CF21DAB647A65DAFE492FB15A8F6E631629C45BEF3DFFECC02"
         },
         "30": {
             "partido": "30",
             "quantidadeVotos": "2",
-            "assinatura": "01CF593F253F45482A80BA1C4C3371705D37015B99DCFEEABFD8451EA5DB62E822577C19060BEA609A887322C4CB79316638E03948B8E521FA098FB8AD0D300A"
+            "assinatura": "594919BB17A298A38C11D9911D91A03CF8B7BCC9D7B3A1CDE989EFD0762DF9916EC15EF020A6B0E7ED92E4DA45D151FFA5FF7F3F9D227E4CCCC28F417A2D430C"
         },
         "44": {
             "partido": "44",
             "quantidadeVotos": "1",
-            "assinatura": "CA6FE5BAE24BF9EB2192650E9902704A152FB009F98AA2B629B95E7A11D3CD8F27E17DBA336B8B954A329E20EE0BC3D1A6C449BA3636F1323E53E7709BE02D0F"
+            "assinatura": "15017281BE267F81E5F4BB1308C8D9DF4CC249E36D37570E8C8F7F43B22F91FFB6D383C3395A3EEC3D85D628CE616D6A2316E8471195DF57CF1130015457A90B"
+        },
+        "80": {
+            "partido": "80",
+            "quantidadeVotos": "1",
+            "assinatura": "A65ABCA8DF1A8A56CB65D809891709B6FE3D3B1952B2CFB47C716495AFD7523E18B77633C59E59CD9CB5FABFB0367BFD2AE4F4E13A72733A089E94ECFFC7200A"
         },
         "nulo": {
-            "quantidadeVotos": "4",
-            "assinatura": "7C388947AC66A7B6C7A5B72A8DEE4F8E42D3195E11B13E422E2A43AD314B50662B048020786A8B1143BF061DC8E6428E582062B06B2DAC7F80D2EB553712870B"
+            "quantidadeVotos": "3",
+            "assinatura": "48D96AD6CCFE7F9A3AB0B76852F4ECDC173BD9930901DF85ADA8895DB8554C5666FE2A8F75B49EDD4F5845046F889DE5093778F2BB56568F47C7CE974748D902"
         }
     },
-    "vencedor": "LULA",
-    "diffVencedor": 59,
+    "vencedor": "BOLSONARO",
+    "diffVencedor": 107,
     "diffTransito": true
 }

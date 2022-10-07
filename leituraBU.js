@@ -31,7 +31,7 @@ function getBU(filename){
         try{
             const serialUrna = dataJson.conteudo.entidadeBoletimUrna.urna.correspondenciaResultado.carga.numeroSerieFC.value;
 
-            if(serialUrna.length == 8){
+            if(serialUrna?.length == 8){
                 resolve({
                     secao: dataJson.identificacao.secao.value,
                     zona: dataJson.conteudo.entidadeBoletimUrna.urna.correspondenciaResultado.identificacao.municipioZona.zona.value,
@@ -80,6 +80,7 @@ function getBU(filename){
         }
         catch(e){
             console.log("Erro ao ler arquivo: " + filename);
+            console.log(e);
             resolve();
         }
     }));
