@@ -10,9 +10,8 @@ import fg from "fast-glob";
     for(let file of urnasSemSerial){
         const data = JSON.parse(fs.readFileSync(file, "utf-8"));
 
-        if(!FCs.includes(data.numeroSerieFC)){
+        if(FCs[FCs.length - 1] !== data.numeroSerieFC)
             FCs.push(data.numeroSerieFC);
-        }
     }
 
     fs.writeFileSync(`SerialsFCsError.txt`, FCs.join(" "));
