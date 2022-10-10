@@ -54,12 +54,15 @@ class CrawlerBUs{
         })
         //.on('pageerror', ({ message }) => console.log(message))
         .on('response', async response => {
-            const url = response.url();
-    
-            if(response.url().includes('.bu')){
-                const filename = path.basename(url);
-                fs.writeFileSync(`./Binary/${filename}`, await response.buffer());
+            try{
+                const url = response.url();
+        
+                if(response.url().includes('.bu')){
+                    const filename = path.basename(url);
+                    fs.writeFileSync(`./Binary/${filename}`, await response.buffer());
+                }
             }
+            catch(e){}
         })
         //.on('requestfailed', request => console.log(`${request.failure().errorText} ${request.url()}`));
     }

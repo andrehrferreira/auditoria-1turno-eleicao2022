@@ -89,6 +89,8 @@ const municipios = JSON.parse(fs.readFileSync("municipios.json", "utf8"));
             diffTransito
         };
 
+        fs.appendFileSync(`./relatorio-${municipio?.estadoSingla}.csv`, `${newLine}\n`);
+
         if(diffTransito){
             reportCSVVotoEmTransito += `${reportCSVObject.join(",")}\n`;
 
@@ -108,8 +110,8 @@ const municipios = JSON.parse(fs.readFileSync("municipios.json", "utf8"));
     summayTotal.votos["NULOS"] = summayTotal.votos["NULOS"].toLocaleString("pt-BR");
     summayTotal.votos["OUTROS"] = summayTotal.votos["OUTROS"].toLocaleString("pt-BR");
 
-    fs.writeFileSync("./relatorio.json", JSON.stringify(reportJSON, null, 4));
-    fs.writeFileSync("./relatorioVotoEmTransito.json", JSON.stringify(reportJSONVotoEmTransito, null, 4));
+    //fs.writeFileSync("./relatorio.json", JSON.stringify(reportJSON, null, 4));
+    //fs.writeFileSync("./relatorioVotoEmTransito.json", JSON.stringify(reportJSONVotoEmTransito, null, 4));
     fs.writeFileSync("./relatorio.csv", reportCSV);
     fs.writeFileSync("./relatorioVotoEmTransito.csv", reportCSVVotoEmTransito);
     fs.writeFileSync("./sumarioFinal.json", JSON.stringify(summayTotal, null, 4));
