@@ -6,7 +6,6 @@ import fg from "fast-glob";
     const index = {};
 
     for(let fileMun of files){
-        console.log(fileMun);
         const data = await fs.readFileSync(fileMun, "utf-8");
         const dataJson = JSON.parse(data);
 
@@ -24,6 +23,15 @@ import fg from "fast-glob";
                     const sessaoId = sessao.ns;
 
                     index[`${parseInt(codMun)}-${parseInt(zonaId)}-${parseInt(sessaoId)}`] = {
+                        estadoSingla,
+                        estado,
+                        municipio,
+                        codMun,
+                        zona: zonaId,
+                        sessao: sessaoId
+                    }
+
+                    index[`${parseInt(codMun)}-${parseInt(zonaId)}`] = {
                         estadoSingla,
                         estado,
                         municipio,

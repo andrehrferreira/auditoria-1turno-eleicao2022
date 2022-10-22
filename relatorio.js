@@ -28,7 +28,7 @@ const municipios = JSON.parse(fs.readFileSync("municipios.json", "utf8"));
     for(let fileBU of files){
         bar1.increment();  
         const buData = JSON.parse(fs.readFileSync(fileBU, "utf8"));
-        const id = `${buData.municipio}-${buData.zona}-${buData.secao}`;
+        const id = `${buData.municipio}-${buData.zona}`;
         const municipio = municipios[id];
 
         let votosOutros = 0;

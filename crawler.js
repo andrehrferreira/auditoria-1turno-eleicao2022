@@ -1,8 +1,14 @@
+/**
+ * Crawler de BUs em binario e JSON do site do TSE
+ * 
+ * @autor Andre Ferreira <andrehrf@gmail.com>
+ * @see https://resultados.tse.jus.br/oficial/app/index.html
+ */
+
 import * as puppeteer from 'puppeteer';
 import * as path from "path";
 import * as fs from "fs";
 import * as cliProgress from "cli-progress";
-import * as url from "url";
 
 process.on('uncaughtException', function(err) {
     console.log(err)
